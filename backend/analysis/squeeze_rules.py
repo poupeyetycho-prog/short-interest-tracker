@@ -25,13 +25,16 @@ from config import (
 # Tier order matters: the first match wins, strongest first.
 TIERS = ["urgent", "heads_up", "watch"]
 
+# `tag` is an ntfy emoji SHORTCODE, not a literal emoji: it travels in the Tags
+# header, and HTTP headers must be latin-1 encodable. Putting a raw emoji in a
+# header raises UnicodeEncodeError. ntfy renders the shortcode as the emoji.
 TIER_META = {
-    "watch": {"emoji": "🔵", "label": "Watch", "push": False, "priority": "low"},
-    "heads_up": {"emoji": "🔔", "label": "Heads-up", "push": True, "priority": "default"},
-    "urgent": {"emoji": "🔴", "label": "Urgent", "push": True, "priority": "high"},
-    "confirmed": {"emoji": "✅", "label": "Confirmed", "push": True, "priority": "high"},
-    "continuation": {"emoji": "📈", "label": "Continuation", "push": True, "priority": "default"},
-    "building": {"emoji": "🟡", "label": "Building", "push": True, "priority": "low"},
+    "watch": {"tag": "eyes", "label": "Watch", "push": False, "priority": "low"},
+    "heads_up": {"tag": "bell", "label": "Heads-up", "push": True, "priority": "default"},
+    "urgent": {"tag": "rotating_light", "label": "Urgent", "push": True, "priority": "high"},
+    "confirmed": {"tag": "white_check_mark", "label": "Confirmed", "push": True, "priority": "high"},
+    "continuation": {"tag": "chart_with_upwards_trend", "label": "Continuation", "push": True, "priority": "default"},
+    "building": {"tag": "hourglass_flowing_sand", "label": "Building", "push": True, "priority": "low"},
 }
 
 # Intraday alerts are explicitly NOT entry signals: 16.1% of even the successful
@@ -132,15 +135,19 @@ def evaluate_continuation(symbol: str, day_n: int, gain_since_trigger: float,
 
 
 def format_message(sig: Signal, catalyst: str | None = None) -> tuple[str, str]:
-    """(title, body) for the push. The catalyst is a LABEL, never a filter."""
+    """(title, body) for the push. The catalyst is a LABEL, never a filter.
+
+    The title goes in an HTTP header, so it must stay latin-1 encodable — no
+    emoji. The body is sent as UTF-8 bytes and can hold anything.
+    """
     meta = TIER_META[sig.tier]
-    title = f"{meta['emoji']} {sig.symbol} {sig.pct_change:+.1f}%"
-    lines = [f"{meta['label']}"]
+    title = f"{meta['label']}: {sig.symbol} {sig.pct_change:+.1f}%"
+    lines = []
     if sig.price:
         lines.append(f"${sig.price:.2f} (prev close ${sig.prev_close:.2f})")
     if sig.rvol:
         lines.append(f"volume {sig.rvol:.1f}x normal")
-    lines.append(f"📰 {catalyst}" if catalyst else "no news found")
+    lines.append(f"News: {catalyst}" if catalyst else "No news found")
     if sig.note:
         lines.append(sig.note)
     return title, "\n".join(lines)

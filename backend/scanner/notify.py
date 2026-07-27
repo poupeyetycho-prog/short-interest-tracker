@@ -19,9 +19,11 @@ def push(sig: Signal, catalyst: str | None = None, click_url: str | None = None)
 
     title, body = format_message(sig, catalyst)
     headers = {
-        "Title": title,
+        "Title": _header_safe(title),
         "Priority": meta["priority"],
-        "Tags": "chart_with_upwards_trend" if sig.pct_change >= 0 else "chart",
+        # ntfy renders these shortcodes as emoji. Raw emoji here would raise
+        # UnicodeEncodeError, since HTTP headers are latin-1.
+        "Tags": meta["tag"],
     }
     if click_url:
         headers["Click"] = click_url
@@ -34,9 +36,17 @@ def push(sig: Signal, catalyst: str | None = None, click_url: str | None = None)
             print(f"[notify] push failed {r.status_code} for {sig.symbol}: {r.text[:120]}")
             return False
         return True
-    except requests.RequestException as e:
+    except Exception as e:
+        # Deliberately broad: a UnicodeEncodeError from an unencodable header is
+        # NOT a RequestException, and once crashed an entire scan mid-run. One
+        # bad alert must never take down the other 49 tickers.
         print(f"[notify] push error for {sig.symbol}: {type(e).__name__}: {str(e)[:160]}")
         return False
+
+
+def _header_safe(value: str) -> str:
+    """HTTP headers must be latin-1; drop anything that isn't."""
+    return value.encode("latin-1", errors="ignore").decode("latin-1").strip() or "Alert"
 
 
 def push_digest(title: str, lines: list[str]) -> bool:
