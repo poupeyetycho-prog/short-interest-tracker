@@ -55,8 +55,19 @@ def build_watchlist() -> list[WatchlistEntry]:
 
 
 def _already_alerted(db, symbol: str, tier: str, trade_date: str) -> bool:
-    """One push per ticker per tier per day."""
-    return db.query(Alert).filter_by(symbol=symbol, tier=tier, trade_date=trade_date).first() is not None
+    """One push per ticker per tier per day.
+
+    Only a *delivered* alert burns the cooldown. A record that was never pushed
+    (ntfy down, no topic configured, network blip) must not silently consume the
+    day's slot — otherwise the alert is lost permanently rather than retried on
+    the next scan. Non-push tiers ('watch' is in-app only) still record once.
+    """
+    prior = db.query(Alert).filter_by(symbol=symbol, tier=tier, trade_date=trade_date).first()
+    if prior is None:
+        return False
+    if not TIER_META[tier]["push"]:
+        return True
+    return bool(prior.pushed)
 
 
 def _rvol(symbol: str) -> float | None:
@@ -174,8 +185,10 @@ def scan_stateless(state_dir: str, dry_run: bool = False, close_pass: bool = Fal
         if not sig:
             continue
 
+        # Same rule as _already_alerted(): only a delivered push burns the day.
         key = st.cooldown_key(sym, sig.tier, trade_date)
-        if key in alerts:
+        prior = alerts.get(key)
+        if prior is not None and (not TIER_META[sig.tier]["push"] or prior.get("pushed")):
             continue
 
         cat = catalyst_mod.find(sym) if TIER_META[sig.tier]["push"] else None
