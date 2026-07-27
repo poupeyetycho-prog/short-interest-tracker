@@ -9,6 +9,16 @@ def enabled() -> bool:
     return bool(NTFY_TOPIC)
 
 
+def describe_target() -> str:
+    """A fingerprint of the push target for logs — never the topic itself, since
+    on the public ntfy.sh server the topic name is the only access control."""
+    if not NTFY_TOPIC:
+        return "ntfy: DISABLED (NTFY_TOPIC unset)"
+    clean = all(c.isalnum() or c in "-_" for c in NTFY_TOPIC)
+    return (f"ntfy: server={NTFY_SERVER} topic_len={len(NTFY_TOPIC)} "
+            f"charset_ok={clean}")
+
+
 def push(sig: Signal, catalyst: str | None = None, click_url: str | None = None) -> bool:
     """Send one alert. Returns True when delivered."""
     if not enabled():

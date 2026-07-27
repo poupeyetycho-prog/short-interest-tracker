@@ -162,6 +162,7 @@ def scan_stateless(state_dir: str, dry_run: bool = False, close_pass: bool = Fal
     if not close_pass and not market_open_now(now):
         return {"skipped": "market closed", "at": now.isoformat(), "changed": False}
 
+    print(notify.describe_target())
     watch = st.load_watchlist(state_dir)
     if not watch:
         return {"skipped": "no watchlist state", "at": now.isoformat(), "changed": False}
