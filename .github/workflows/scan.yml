@@ -52,15 +52,17 @@ jobs:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
         run: python -m scanner.run_scan --state-dir ../state
 
+      # state/ is gitignored on main, so `git status` can't see it — stage with
+      # -f first, then let `git diff --cached` decide whether anything changed.
       - name: Persist state
         run: |
-          if [ -z "$(git status --porcelain state)" ]; then
-            echo "state unchanged — nothing to commit"; exit 0
-          fi
           git config user.name  "squeeze-scanner"
           git config user.email "actions@github.com"
           git checkout -B state
-          git add -f state/alerts.json state/watchlist.json
+          git add -f state/alerts.json state/watchlist.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "state unchanged — nothing to commit"; exit 0
+          fi
           git commit -m "state: alerts $(date -u +%FT%TZ)"
           git push -f origin state
 
