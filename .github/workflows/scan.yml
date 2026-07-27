@@ -1,0 +1,105 @@
+name: Squeeze scan
+
+# 5 minutes is GitHub's hard minimum for cron. Scheduled runs can be delayed
+# 10-30 min at peak load — each run is stateless and re-derives from the last
+# processed state, so a late run still catches the move.
+#
+# NOTE: this requires a PUBLIC repo. Private repos get only 2,000 free Action
+# minutes/month, which 5-minute scans exhaust in about a week.
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: squeeze-scan
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Restore alert state
+        run: |
+          git fetch origin state:state 2>/dev/null || echo "no state branch yet"
+          mkdir -p state
+          git show state:watchlist.json > state/watchlist.json 2>/dev/null || echo "no watchlist yet"
+          git show state:alerts.json    > state/alerts.json    2>/dev/null || echo "no alerts yet"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install deps
+        working-directory: backend
+        run: pip install -r requirements.txt
+
+      - name: Run scan
+        working-directory: backend
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          NTFY_SERVER: ${{ secrets.NTFY_SERVER }}
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: python -m scanner.run_scan --state-dir ../state
+
+      - name: Persist state
+        run: |
+          if [ -z "$(git status --porcelain state)" ]; then
+            echo "state unchanged — nothing to commit"; exit 0
+          fi
+          git config user.name  "squeeze-scanner"
+          git config user.email "actions@github.com"
+          git checkout -B state
+          git add -f state/alerts.json state/watchlist.json
+          git commit -m "state: alerts $(date -u +%FT%TZ)"
+          git push -f origin state
+
+  # Rebuilds the watchlist from fresh FINRA + Yahoo data, and doubles as the
+  # heartbeat that keeps scheduled workflows from auto-disabling after 60 days
+  # of repository inactivity.
+  refresh:
+    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '*/5 * * * *'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - id: gate
+        # Only actually refresh once a day, at 09:00 UTC.
+        run: |
+          if [ "$(date -u +%H%M)" \< "0900" ] || [ "$(date -u +%H%M)" \> "0910" ]; then
+            echo "run=false" >> $GITHUB_OUTPUT
+          else
+            echo "run=true" >> $GITHUB_OUTPUT
+          fi
+      - uses: actions/setup-python@v5
+        if: steps.gate.outputs.run == 'true'
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install deps
+        if: steps.gate.outputs.run == 'true'
+        working-directory: backend
+        run: pip install -r requirements.txt
+      - name: Rebuild watchlist
+        if: steps.gate.outputs.run == 'true'
+        working-directory: backend
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: python -m scanner.run_scan --refresh-watchlist --state-dir ../state
+      - name: Persist watchlist
+        if: steps.gate.outputs.run == 'true'
+        run: |
+          git config user.name  "squeeze-scanner"
+          git config user.email "actions@github.com"
+          git fetch origin state:state 2>/dev/null || true
+          git checkout -B state
+          git add -f state/watchlist.json
+          git commit -m "state: watchlist $(date -u +%F)" || echo "no change"
+          git push -f origin state

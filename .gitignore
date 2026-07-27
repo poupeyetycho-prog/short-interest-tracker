@@ -1,0 +1,16 @@
+# Python
+backend/.venv/
+__pycache__/
+*.pyc
+backend/data.db
+
+# Node / frontend
+frontend/node_modules/
+frontend/dist/
+
+# Scanner state — lives on the `state` branch, force-added by the workflow
+state/
+
+# OS
+Thumbs.db
+.DS_Store
