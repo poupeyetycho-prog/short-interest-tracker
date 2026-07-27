@@ -25,11 +25,17 @@ def push(sig: Signal, catalyst: str | None = None, click_url: str | None = None)
     }
     if click_url:
         headers["Click"] = click_url
+    url = f"{NTFY_SERVER}/{NTFY_TOPIC}"
     try:
-        r = requests.post(f"{NTFY_SERVER}/{NTFY_TOPIC}",
-                          data=body.encode("utf-8"), headers=headers, timeout=20)
-        return r.status_code < 300
-    except requests.RequestException:
+        r = requests.post(url, data=body.encode("utf-8"), headers=headers, timeout=20)
+        if r.status_code >= 300:
+            # Log loudly — a silently swallowed failure here once hid an empty
+            # NTFY_SERVER (so the URL had no scheme) for an entire session.
+            print(f"[notify] push failed {r.status_code} for {sig.symbol}: {r.text[:120]}")
+            return False
+        return True
+    except requests.RequestException as e:
+        print(f"[notify] push error for {sig.symbol}: {type(e).__name__}: {str(e)[:160]}")
         return False
 
 

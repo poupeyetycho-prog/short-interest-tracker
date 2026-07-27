@@ -31,27 +31,40 @@ ENRICH_TTL_HOURS = 24  # re-fetch fundamentals older than this
 # Candle cache TTL.
 CANDLE_TTL_HOURS = 12
 
+def _env(name: str, default: str = "") -> str:
+    """Read an env var, treating an EMPTY value as unset.
+
+    CI passes unset secrets through as empty strings (`FOO: ${{ secrets.FOO }}`
+    with no such secret yields ""), and `os.environ.get(name, default)` returns
+    that "" rather than the default because the key exists. That silently broke
+    two things in Actions: the ntfy base URL became "" so every push URL lost its
+    scheme, and the SEC User-Agent became "" so EDGAR returned 403.
+    Also strips whitespace — `gh secret set` via a pipe can capture a newline.
+    """
+    return (os.environ.get(name) or default).strip()
+
+
 # --- Phase 2: research sources -------------------------------------------------
 # SEC requires a descriptive User-Agent naming a real contact, or it returns 403.
 # Set SEC_USER_AGENT to "your-app your@email.com" — deliberately NOT hardcoded so
 # a personal address never ends up in a public repo.
-SEC_USER_AGENT = os.environ.get("SEC_USER_AGENT", "short-interest-tracker contact@example.com")
-REDDIT_CLIENT_ID = os.environ.get("REDDIT_CLIENT_ID", "")
-REDDIT_CLIENT_SECRET = os.environ.get("REDDIT_CLIENT_SECRET", "")
-REDDIT_USER_AGENT = os.environ.get("REDDIT_USER_AGENT", "short-interest-tracker/0.1")
+SEC_USER_AGENT = _env("SEC_USER_AGENT", "short-interest-tracker contact@example.com")
+REDDIT_CLIENT_ID = _env("REDDIT_CLIENT_ID")
+REDDIT_CLIENT_SECRET = _env("REDDIT_CLIENT_SECRET")
+REDDIT_USER_AGENT = _env("REDDIT_USER_AGENT", "short-interest-tracker/0.1")
 
 # Automated X/Twitter reading requires the paid official API. Left disabled; the
 # UI ships a compliant deep-link button instead of a scraper.
 X_API_BEARER = os.environ.get("X_API_BEARER", "")
 
 # --- Phase 2: synthesis --------------------------------------------------------
-ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
-ANTHROPIC_MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-opus-5")
+ANTHROPIC_API_KEY = _env("ANTHROPIC_API_KEY")
+ANTHROPIC_MODEL = _env("ANTHROPIC_MODEL", "claude-opus-5")
 ANALYSIS_TTL_HOURS = 6
 
 # --- Phase 2: alerts -----------------------------------------------------------
-NTFY_TOPIC = os.environ.get("NTFY_TOPIC", "")
-NTFY_SERVER = os.environ.get("NTFY_SERVER", "https://ntfy.sh")
+NTFY_TOPIC = _env("NTFY_TOPIC")
+NTFY_SERVER = _env("NTFY_SERVER", "https://ntfy.sh").rstrip("/")
 
 # Structural gate — only these stocks can ever alert (the real noise filter).
 GATE_MIN_SHORT_PCT_FLOAT = float(os.environ.get("GATE_MIN_SHORT_PCT_FLOAT", "15"))
