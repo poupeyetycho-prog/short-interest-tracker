@@ -6,7 +6,7 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import asc, desc, func
 
-from analysis import claude_client, evidence as evidence_mod
+from analysis import claude_client, evidence as evidence_mod, heuristic
 from config import ANALYSIS_TTL_HOURS, CANDLE_TTL_HOURS, DISCLAIMER
 from db import AnalysisCache, CandleCache, SessionLocal, Stock, get_meta, init_db
 from market_data import get_candles, resolve_range
@@ -205,7 +205,15 @@ def _reason(ticker: str, mode: str, refresh: bool):
                 return payload
 
         bundle = evidence_mod.gather(symbol, mode=mode)
-        analysis = claude_client.synthesize(evidence_mod.compact_for_llm(bundle), mode=mode)
+        compact = evidence_mod.compact_for_llm(bundle)
+        analysis = claude_client.synthesize(compact, mode=mode)
+
+        # When the LLM path is unavailable (no key / refusal / error), fall back
+        # to the deterministic rule-based verdict so the button always answers
+        # the question instead of showing bare evidence.
+        if analysis.get("error"):
+            analysis = heuristic.verdict(compact, mode=mode)
+
         payload = {
             "symbol": symbol,
             "mode": mode,
@@ -215,7 +223,8 @@ def _reason(ticker: str, mode: str, refresh: bool):
             "x_search_url": social.x_search_url(symbol),
             "cached": False,
         }
-        # Only cache a successful synthesis — never cache an error.
+        # Cache any real verdict (AI or rule-based); the rule-based one is
+        # deterministic so caching it is safe.
         if "error" not in analysis:
             session.add(AnalysisCache(symbol=symbol, kind=mode,
                                       payload=json.dumps(payload, default=str),

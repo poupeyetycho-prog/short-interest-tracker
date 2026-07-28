@@ -59,9 +59,17 @@ export default function ShortInterestTimeline({ ticker }: { ticker: string }) {
     );
 
     // Mark the periods where shorting ramped hardest.
+    //
+    // setMarkers() requires ASCENDING TIME ORDER and throws otherwise, which
+    // unmounted the whole app. The API deliberately returns inflections sorted
+    // by change size (biggest jump first) for the list below, so sort a copy by
+    // date here rather than changing the API's ordering.
     if (inflections.length) {
+      const byDate = [...inflections].sort((a, b) =>
+        a.settlement_date < b.settlement_date ? -1 : a.settlement_date > b.settlement_date ? 1 : 0
+      );
       series.setMarkers(
-        inflections.map((i) => ({
+        byDate.map((i) => ({
           time: i.settlement_date,
           position: "aboveBar" as const,
           color: "#ef5350",

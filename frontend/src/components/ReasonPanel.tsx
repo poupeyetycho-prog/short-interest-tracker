@@ -78,6 +78,13 @@ export default function ReasonPanel({ ticker, xUrl }: { ticker: string; xUrl: st
             </div>
           )}
 
+          {a?.source === "rules" && (
+            <div className="reason-notice rules-note">
+              <strong>Rule-based summary</strong> — computed from the evidence below.
+              Set <code>ANTHROPIC_API_KEY</code> for a deeper AI-written analysis.
+            </div>
+          )}
+
           {a?.error && (
             <div className="reason-notice">
               {a.error === "no_api_key"

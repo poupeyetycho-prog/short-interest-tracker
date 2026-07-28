@@ -4,6 +4,7 @@ import { compact, usd, pct, price, signedPct } from "../format";
 import CandlestickChart from "./CandlestickChart";
 import ReasonPanel from "./ReasonPanel";
 import ShortInterestTimeline from "./ShortInterestTimeline";
+import ErrorBoundary from "./ErrorBoundary";
 
 function Stat({
   label,
@@ -90,14 +91,20 @@ export default function StockDetail({ ticker, onBack }: { ticker: string; onBack
         <Stat label="Short % of Outstanding" value={pct(s.short_pct_outstanding)} hint={`${compact(s.shares_outstanding)} shares outstanding`} />
       </div>
 
-      <CandlestickChart ticker={s.symbol} />
+      <ErrorBoundary label="price chart">
+        <CandlestickChart ticker={s.symbol} />
+      </ErrorBoundary>
 
-      <ReasonPanel
-        ticker={s.symbol}
-        xUrl={`https://x.com/search?q=%24${s.symbol}&f=live`}
-      />
+      <ErrorBoundary label="research">
+        <ReasonPanel
+          ticker={s.symbol}
+          xUrl={`https://x.com/search?q=%24${s.symbol}&f=live`}
+        />
+      </ErrorBoundary>
 
-      <ShortInterestTimeline ticker={s.symbol} />
+      <ErrorBoundary label="short-interest timeline">
+        <ShortInterestTimeline ticker={s.symbol} />
+      </ErrorBoundary>
     </div>
   );
 }

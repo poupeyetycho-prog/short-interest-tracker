@@ -93,6 +93,7 @@ export interface ReasonAnalysis {
   factors?: ReasonFactor[];
   contradicting_evidence?: string[];
   timeline_note?: string;
+  source?: string;
   error?: string;
   message?: string;
   _model?: string;
