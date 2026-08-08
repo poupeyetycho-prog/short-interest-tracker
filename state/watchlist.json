@@ -1,0 +1,255 @@
+{
+ "built_at": "2026-07-27T18:13:34.101775",
+ "symbols": [
+  {
+   "symbol": "HTZ",
+   "short_pct_float": 75.55,
+   "days_to_cover": 3.94
+  },
+  {
+   "symbol": "VNET",
+   "short_pct_float": 66.01,
+   "days_to_cover": 9.3
+  },
+  {
+   "symbol": "TNGX",
+   "short_pct_float": 61.42,
+   "days_to_cover": 15.32
+  },
+  {
+   "symbol": "GOSS",
+   "short_pct_float": 53.06,
+   "days_to_cover": 3.79
+  },
+  {
+   "symbol": "BTDR",
+   "short_pct_float": 45.01,
+   "days_to_cover": 6.07
+  },
+  {
+   "symbol": "SOUN",
+   "short_pct_float": 43.03,
+   "days_to_cover": 6.02
+  },
+  {
+   "symbol": "SPCE",
+   "short_pct_float": 40.02,
+   "days_to_cover": 3.02
+  },
+  {
+   "symbol": "PCT",
+   "short_pct_float": 38.93,
+   "days_to_cover": 13.67
+  },
+  {
+   "symbol": "ASAN",
+   "short_pct_float": 38.71,
+   "days_to_cover": 6.75
+  },
+  {
+   "symbol": "RR",
+   "short_pct_float": 37.64,
+   "days_to_cover": 6.67
+  },
+  {
+   "symbol": "WEN",
+   "short_pct_float": 36.67,
+   "days_to_cover": 3.79
+  },
+  {
+   "symbol": "RXRX",
+   "short_pct_float": 35.24,
+   "days_to_cover": 6.72
+  },
+  {
+   "symbol": "NTLA",
+   "short_pct_float": 34.16,
+   "days_to_cover": 9.75
+  },
+  {
+   "symbol": "IBRX",
+   "short_pct_float": 34.1,
+   "days_to_cover": 11.92
+  },
+  {
+   "symbol": "INDI",
+   "short_pct_float": 33.23,
+   "days_to_cover": 11.68
+  },
+  {
+   "symbol": "NTST",
+   "short_pct_float": 32.85,
+   "days_to_cover": 22.16
+  },
+  {
+   "symbol": "QUBT",
+   "short_pct_float": 32.27,
+   "days_to_cover": 6.71
+  },
+  {
+   "symbol": "CMPX",
+   "short_pct_float": 32.03,
+   "days_to_cover": 15.67
+  },
+  {
+   "symbol": "AI",
+   "short_pct_float": 31.94,
+   "days_to_cover": 8.81
+  },
+  {
+   "symbol": "UPST",
+   "short_pct_float": 31.85,
+   "days_to_cover": 7.13
+  },
+  {
+   "symbol": "EOSE",
+   "short_pct_float": 31.8,
+   "days_to_cover": 3.93
+  },
+  {
+   "symbol": "OCGN",
+   "short_pct_float": 31.75,
+   "days_to_cover": 18.85
+  },
+  {
+   "symbol": "CLSK",
+   "short_pct_float": 31.49,
+   "days_to_cover": 3.28
+  },
+  {
+   "symbol": "HRTX",
+   "short_pct_float": 31.48,
+   "days_to_cover": 13.35
+  },
+  {
+   "symbol": "EVGO",
+   "short_pct_float": 31.34,
+   "days_to_cover": 14.14
+  },
+  {
+   "symbol": "DDD",
+   "short_pct_float": 31.27,
+   "days_to_cover": 16.45
+  },
+  {
+   "symbol": "RLAY",
+   "short_pct_float": 31.26,
+   "days_to_cover": 13.38
+  },
+  {
+   "symbol": "XRX",
+   "short_pct_float": 31.18,
+   "days_to_cover": 13.95
+  },
+  {
+   "symbol": "NVAX",
+   "short_pct_float": 30.98,
+   "days_to_cover": 11.43
+  },
+  {
+   "symbol": "BBAI",
+   "short_pct_float": 30.72,
+   "days_to_cover": 5.76
+  },
+  {
+   "symbol": "SRPT",
+   "short_pct_float": 30.11,
+   "days_to_cover": 9.22
+  },
+  {
+   "symbol": "RUN",
+   "short_pct_float": 29.97,
+   "days_to_cover": 6.38
+  },
+  {
+   "symbol": "SLS",
+   "short_pct_float": 29.84,
+   "days_to_cover": 5.93
+  },
+  {
+   "symbol": "ALT",
+   "short_pct_float": 29.38,
+   "days_to_cover": 12.52
+  },
+  {
+   "symbol": "RCAT",
+   "short_pct_float": 29.25,
+   "days_to_cover": 3.66
+  },
+  {
+   "symbol": "PRME",
+   "short_pct_float": 29.17,
+   "days_to_cover": 6.74
+  },
+  {
+   "symbol": "HIMS",
+   "short_pct_float": 29.16,
+   "days_to_cover": 4.52
+  },
+  {
+   "symbol": "NBIS",
+   "short_pct_float": 29.16,
+   "days_to_cover": 3.51
+  },
+  {
+   "symbol": "LUNR",
+   "short_pct_float": 28.98,
+   "days_to_cover": 3.83
+  },
+  {
+   "symbol": "CABA",
+   "short_pct_float": 28.7,
+   "days_to_cover": 6.73
+  },
+  {
+   "symbol": "TRIP",
+   "short_pct_float": 28.47,
+   "days_to_cover": 11.02
+  },
+  {
+   "symbol": "MPT",
+   "short_pct_float": 28.17,
+   "days_to_cover": 22.89
+  },
+  {
+   "symbol": "ENVX",
+   "short_pct_float": 27.9,
+   "days_to_cover": 9.08
+  },
+  {
+   "symbol": "PALI",
+   "short_pct_float": 27.85,
+   "days_to_cover": 9.98
+  },
+  {
+   "symbol": "SMMT",
+   "short_pct_float": 27.79,
+   "days_to_cover": 11.02
+  },
+  {
+   "symbol": "CERT",
+   "short_pct_float": 27.75,
+   "days_to_cover": 7.81
+  },
+  {
+   "symbol": "KSS",
+   "short_pct_float": 27.23,
+   "days_to_cover": 8.16
+  },
+  {
+   "symbol": "APLD",
+   "short_pct_float": 26.69,
+   "days_to_cover": 4.11
+  },
+  {
+   "symbol": "FLNC",
+   "short_pct_float": 26.58,
+   "days_to_cover": 3.06
+  },
+  {
+   "symbol": "TEM",
+   "short_pct_float": 26.57,
+   "days_to_cover": 6.38
+  }
+ ]
+}
