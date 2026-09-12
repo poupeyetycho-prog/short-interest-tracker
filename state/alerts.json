@@ -1,0 +1,26 @@
+{
+ "IBRX|watch|2026-09-11": {
+  "catalyst": null,
+  "date": "2026-09-11",
+  "pct": 6.35,
+  "pushed": false
+ },
+ "SOC|watch|2026-09-11": {
+  "catalyst": null,
+  "date": "2026-09-11",
+  "pct": 5.18,
+  "pushed": false
+ },
+ "SRPT|watch|2026-09-09": {
+  "catalyst": null,
+  "date": "2026-09-09",
+  "pct": 7.45,
+  "pushed": false
+ },
+ "TNGX|watch|2026-09-09": {
+  "catalyst": null,
+  "date": "2026-09-09",
+  "pct": 7.62,
+  "pushed": false
+ }
+}
