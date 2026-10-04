@@ -1,0 +1,68 @@
+{
+ "EVGO|heads_up|2026-10-02": {
+  "catalyst": "EVgo and Blink Charging stocks rise while ChargePoint falls amid sector rotation. - Pluang",
+  "date": "2026-10-02",
+  "pct": 10.95,
+  "pushed": true
+ },
+ "FCEL|heads_up|2026-10-02": {
+  "catalyst": "FuelCell Energy (NASDAQ:FCEL) Stock Jumps 7% - Still a Buy? - MarketBeat",
+  "date": "2026-10-02",
+  "pct": 11.47,
+  "pushed": true
+ },
+ "HRTX|heads_up|2026-10-01": {
+  "catalyst": "Form 8K Heron Therapeutics Inc For: 29 September By Investing.com - Investing.com Nigeria",
+  "date": "2026-10-01",
+  "pct": 13.52,
+  "pushed": true
+ },
+ "HRTX|heads_up|2026-10-02": {
+  "catalyst": null,
+  "date": "2026-10-02",
+  "pct": 13.52,
+  "pushed": true
+ },
+ "HRTX|watch|2026-10-02": {
+  "catalyst": null,
+  "date": "2026-10-02",
+  "pct": 6.04,
+  "pushed": false
+ },
+ "IBRX|heads_up|2026-10-02": {
+  "catalyst": "A director proposes selling 81,056 ImmunityBio (IBRX) shares, including 55,979 from option exercises. - Stock Titan",
+  "date": "2026-10-02",
+  "pct": 10.83,
+  "pushed": true
+ },
+ "IBRX|watch|2026-10-02": {
+  "catalyst": null,
+  "date": "2026-10-02",
+  "pct": 9.81,
+  "pushed": false
+ },
+ "UWMC|watch|2026-10-02": {
+  "catalyst": null,
+  "date": "2026-10-02",
+  "pct": 6.49,
+  "pushed": false
+ },
+ "WOLF|heads_up|2026-10-01": {
+  "catalyst": "Is Wolfspeed (WOLF) Expensive As Its 3 Month Slide Meets Execution Questions? - Yahoo Finance",
+  "date": "2026-10-01",
+  "pct": 10.81,
+  "pushed": true
+ },
+ "WOLF|heads_up|2026-10-02": {
+  "catalyst": "Is Wolfspeed (WOLF) Overvalued As Its Share Price Jumps Above The $27.50 Target? - Simply Wall Street",
+  "date": "2026-10-02",
+  "pct": 10.81,
+  "pushed": true
+ },
+ "WOLF|urgent|2026-10-02": {
+  "catalyst": "Is Wolfspeed (WOLF) Overvalued As Its Share Price Jumps Above The $27.50 Target? - Simply Wall Street",
+  "date": "2026-10-02",
+  "pct": 12.67,
+  "pushed": true
+ }
+}
