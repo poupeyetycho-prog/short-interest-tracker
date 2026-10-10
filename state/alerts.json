@@ -1,0 +1,152 @@
+{
+ "CCCC|heads_up|2026-10-09": {
+  "catalyst": "Is MacroGenics (MGNX) Stock Outpacing Its Medical Peers This Year?",
+  "date": "2026-10-09",
+  "pct": 10.88,
+  "pushed": true
+ },
+ "CCCC|watch|2026-10-09": {
+  "catalyst": null,
+  "date": "2026-10-09",
+  "pct": 9.65,
+  "pushed": false
+ },
+ "FCEL|heads_up|2026-10-05": {
+  "catalyst": null,
+  "date": "2026-10-05",
+  "pct": 11.47,
+  "pushed": true
+ },
+ "FCEL|heads_up|2026-10-06": {
+  "catalyst": "FuelCell (NASDAQ: FCEL) Scrutinized Over Fit Energy Disclosures Driving Stock Down 15% - PR Newswire",
+  "date": "2026-10-06",
+  "pct": 15.47,
+  "pushed": true
+ },
+ "FCEL|heads_up|2026-10-07": {
+  "catalyst": "FuelCell Energy Inc (FCEL) Stock Up 14.3% but GF Value Says Over - GuruFocus",
+  "date": "2026-10-07",
+  "pct": 14.28,
+  "pushed": true
+ },
+ "FCEL|watch|2026-10-06": {
+  "catalyst": null,
+  "date": "2026-10-06",
+  "pct": 5.48,
+  "pushed": false
+ },
+ "HRTX|heads_up|2026-10-07": {
+  "catalyst": null,
+  "date": "2026-10-07",
+  "pct": 15.86,
+  "pushed": true
+ },
+ "HRTX|heads_up|2026-10-09": {
+  "catalyst": null,
+  "date": "2026-10-09",
+  "pct": 10.39,
+  "pushed": true
+ },
+ "HTZ|heads_up|2026-10-06": {
+  "catalyst": "Hertz Rebounds 16% From a Record Low; Avis Climbs 5%, Ryder Ticks Up",
+  "date": "2026-10-06",
+  "pct": 15.08,
+  "pushed": true
+ },
+ "HTZ|heads_up|2026-10-07": {
+  "catalyst": "Hertz Global Holdings Shares 2.52% After Hours Ahead of Q3 Earnings - Hertz Global Holdings (NASDAQ:HTZ) - Benzinga",
+  "date": "2026-10-07",
+  "pct": 15.08,
+  "pushed": true
+ },
+ "HTZ|urgent|2026-10-06": {
+  "catalyst": "Hertz Rebounds 16% From a Record Low; Avis Climbs 5%, Ryder Ticks Up",
+  "date": "2026-10-06",
+  "pct": 13.46,
+  "pushed": true
+ },
+ "HTZ|watch|2026-10-07": {
+  "catalyst": null,
+  "date": "2026-10-07",
+  "pct": 7.28,
+  "pushed": false
+ },
+ "IBRX|heads_up|2026-10-05": {
+  "catalyst": "Nasdaq, S&P 500, Dow Futures Steady Ahead Of Fed Minutes This Week: TSLA, SPCX, CBRS, QCOM, PTC, IBRX Stocks In Focus - tradingview.com",
+  "date": "2026-10-05",
+  "pct": 10.83,
+  "pushed": true
+ },
+ "IPSC|heads_up|2026-10-08": {
+  "catalyst": "Century Therapeutics stock fell 10.81 percent on October 6 - AD HOC NEWS",
+  "date": "2026-10-08",
+  "pct": 10.55,
+  "pushed": true
+ },
+ "IPSC|heads_up|2026-10-09": {
+  "catalyst": null,
+  "date": "2026-10-09",
+  "pct": 14.06,
+  "pushed": true
+ },
+ "NVAX|heads_up|2026-10-09": {
+  "catalyst": "NVAX Stock Grinds Higher As Traders Watch Volatile Rebound - Timothy Sykes",
+  "date": "2026-10-09",
+  "pct": 13.26,
+  "pushed": true
+ },
+ "PRME|heads_up|2026-10-07": {
+  "catalyst": null,
+  "date": "2026-10-07",
+  "pct": 11.43,
+  "pushed": true
+ },
+ "PRME|heads_up|2026-10-09": {
+  "catalyst": "Prime Medicine (NASDAQ:PRME) Stock Falls 7.6% - Here's Why - MarketBeat",
+  "date": "2026-10-09",
+  "pct": 12.71,
+  "pushed": true
+ },
+ "PRME|watch|2026-10-06": {
+  "catalyst": null,
+  "date": "2026-10-06",
+  "pct": 9.81,
+  "pushed": false
+ },
+ "PRME|watch|2026-10-07": {
+  "catalyst": null,
+  "date": "2026-10-07",
+  "pct": 7.57,
+  "pushed": false
+ },
+ "RXRX|heads_up|2026-10-09": {
+  "catalyst": "What Could Go Wrong With Recursion Pharmaceuticals Stock?",
+  "date": "2026-10-09",
+  "pct": 10.38,
+  "pushed": true
+ },
+ "SOC|watch|2026-10-08": {
+  "catalyst": null,
+  "date": "2026-10-08",
+  "pct": 7.22,
+  "pushed": false
+ },
+ "SVRA|watch|2026-10-07": {
+  "catalyst": null,
+  "date": "2026-10-07",
+  "pct": 7.03,
+  "pushed": false
+ },
+ "WOLF|heads_up|2026-10-05": {
+  "catalyst": "Strength Seen in Wolfspeed, Inc. (WOLF): Can Its 13.2% Jump Turn into More Strength?",
+  "date": "2026-10-05",
+  "pct": 13.19,
+  "pushed": true
+ },
+ "WOLF|watch|2026-10-08": {
+  "catalyst": null,
+  "date": "2026-10-08",
+  "pct": 8.37,
+  "pushed": false
+ }
+}
