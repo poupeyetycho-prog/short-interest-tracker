@@ -1,0 +1,146 @@
+{
+ "CCCC|watch|2026-10-20": {
+  "catalyst": null,
+  "date": "2026-10-20",
+  "pct": 9.52,
+  "pushed": false
+ },
+ "ENVX|heads_up|2026-10-21": {
+  "catalyst": "Enovix (NASDAQ:ENVX) Stock Price Up 6.9% - Should You Buy? - MarketBeat",
+  "date": "2026-10-21",
+  "pct": 10.67,
+  "pushed": true
+ },
+ "ENVX|heads_up|2026-10-22": {
+  "catalyst": "Market Movers | Winners: NUAI, ENVX, ABTC | Losers: AVEX, TKNO, RCUS - Trefis",
+  "date": "2026-10-22",
+  "pct": 12.89,
+  "pushed": true
+ },
+ "ENVX|urgent|2026-10-23": {
+  "catalyst": "Enovix Corporation Estimates \u2013 NASDAQ:ENVX - TradingView",
+  "date": "2026-10-23",
+  "pct": 15.49,
+  "pushed": true
+ },
+ "ENVX|watch|2026-10-23": {
+  "catalyst": null,
+  "date": "2026-10-23",
+  "pct": 7.88,
+  "pushed": false
+ },
+ "HTZ|urgent|2026-10-20": {
+  "catalyst": "Why Is Hertz (HTZ) Stock Soaring Today - TradingView",
+  "date": "2026-10-20",
+  "pct": 12.5,
+  "pushed": true
+ },
+ "HTZ|watch|2026-10-20": {
+  "catalyst": null,
+  "date": "2026-10-20",
+  "pct": 5.71,
+  "pushed": false
+ },
+ "HTZ|watch|2026-10-22": {
+  "catalyst": null,
+  "date": "2026-10-22",
+  "pct": 8.21,
+  "pushed": false
+ },
+ "IPSC|heads_up|2026-10-20": {
+  "catalyst": null,
+  "date": "2026-10-20",
+  "pct": 10.54,
+  "pushed": true
+ },
+ "IPSC|heads_up|2026-10-21": {
+  "catalyst": null,
+  "date": "2026-10-21",
+  "pct": 11.56,
+  "pushed": true
+ },
+ "IPSC|watch|2026-10-22": {
+  "catalyst": null,
+  "date": "2026-10-22",
+  "pct": 5.59,
+  "pushed": false
+ },
+ "KSS|heads_up|2026-10-22": {
+  "catalyst": "Kohl's soars 12% on holiday season optimism (KSS:NYSE) - Seeking Alpha",
+  "date": "2026-10-22",
+  "pct": 11.82,
+  "pushed": true
+ },
+ "KSS|heads_up|2026-10-23": {
+  "catalyst": "Is Kohl's Stock A Buy Right Now?",
+  "date": "2026-10-23",
+  "pct": 11.82,
+  "pushed": true
+ },
+ "KSS|urgent|2026-10-22": {
+  "catalyst": "Kohl\u2019s Revival of Store Brands Could Make It a \u2018Big Winner\u2019 in Holiday Shopping",
+  "date": "2026-10-22",
+  "pct": 12.05,
+  "pushed": true
+ },
+ "KSS|watch|2026-10-22": {
+  "catalyst": null,
+  "date": "2026-10-22",
+  "pct": 8.89,
+  "pushed": false
+ },
+ "PRME|heads_up|2026-10-19": {
+  "catalyst": null,
+  "date": "2026-10-19",
+  "pct": 10.37,
+  "pushed": true
+ },
+ "PRME|heads_up|2026-10-20": {
+  "catalyst": null,
+  "date": "2026-10-20",
+  "pct": 10.37,
+  "pushed": true
+ },
+ "SAIL|watch|2026-10-23": {
+  "catalyst": null,
+  "date": "2026-10-23",
+  "pct": 8.72,
+  "pushed": false
+ },
+ "SOC|watch|2026-10-23": {
+  "catalyst": null,
+  "date": "2026-10-23",
+  "pct": 7.24,
+  "pushed": false
+ },
+ "TNGX|watch|2026-10-21": {
+  "catalyst": null,
+  "date": "2026-10-21",
+  "pct": 5.39,
+  "pushed": false
+ },
+ "UAMY|heads_up|2026-10-19": {
+  "catalyst": "UAMY Stock Draws Traders As Defense Contract Momentum Builds - Timothy Sykes",
+  "date": "2026-10-19",
+  "pct": 11.05,
+  "pushed": true
+ },
+ "UWMC|heads_up|2026-10-23": {
+  "catalyst": "Selective Insurance, Crown Castle, UWM Holdings And Other Big Stocks Moving Higher On Friday - Benzinga",
+  "date": "2026-10-23",
+  "pct": 10.0,
+  "pushed": true
+ },
+ "UWMC|urgent|2026-10-23": {
+  "catalyst": "UWM Soars 19% on $1.8 Billion Debt-Paydown Plan and Preliminary Q3 Profit - TIKR.com",
+  "date": "2026-10-23",
+  "pct": 26.09,
+  "pushed": true
+ },
+ "VYX|watch|2026-10-20": {
+  "catalyst": null,
+  "date": "2026-10-20",
+  "pct": 6.69,
+  "pushed": false
+ }
+}
