@@ -1,0 +1,68 @@
+{
+ "BEAM|watch|2026-11-18": {
+  "catalyst": null,
+  "date": "2026-11-18",
+  "pct": 7.02,
+  "pushed": false
+ },
+ "CMPX|heads_up|2026-11-20": {
+  "catalyst": null,
+  "date": "2026-11-20",
+  "pct": 10.97,
+  "pushed": true
+ },
+ "MPT|watch|2026-11-20": {
+  "catalyst": null,
+  "date": "2026-11-20",
+  "pct": 5.18,
+  "pushed": false
+ },
+ "NTLA|watch|2026-11-20": {
+  "catalyst": null,
+  "date": "2026-11-20",
+  "pct": 6.41,
+  "pushed": false
+ },
+ "PCT|heads_up|2026-11-17": {
+  "catalyst": "PureCycle Technologies CEO Dustin Olson buys $371,800 in stock By Investing.com - Investing.com Canada",
+  "date": "2026-11-17",
+  "pct": 13.69,
+  "pushed": true
+ },
+ "RXRX|watch|2026-11-18": {
+  "catalyst": null,
+  "date": "2026-11-18",
+  "pct": 9.19,
+  "pushed": false
+ },
+ "SAIL|heads_up|2026-11-18": {
+  "catalyst": "1Kosmos Partners with SailPoint to Secure Workforce Onboarding",
+  "date": "2026-11-18",
+  "pct": 10.26,
+  "pushed": true
+ },
+ "SAIL|heads_up|2026-11-19": {
+  "catalyst": "Hind Copper, SAIL, NMDC among 6 stocks on analysts radar amid metals slide - Business Standard",
+  "date": "2026-11-19",
+  "pct": 10.26,
+  "pushed": true
+ },
+ "SVRA|heads_up|2026-11-20": {
+  "catalyst": "Savara (SVRA) Stock Looks Stretched As Its 338% Five Year Run Continues",
+  "date": "2026-11-20",
+  "pct": 10.38,
+  "pushed": true
+ },
+ "SVRA|watch|2026-11-18": {
+  "catalyst": null,
+  "date": "2026-11-18",
+  "pct": 7.48,
+  "pushed": false
+ },
+ "SVRA|watch|2026-11-19": {
+  "catalyst": null,
+  "date": "2026-11-19",
+  "pct": 8.47,
+  "pushed": false
+ }
+}
