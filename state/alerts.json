@@ -1,0 +1,104 @@
+{
+ "BBAI|watch|2026-11-27": {
+  "catalyst": null,
+  "date": "2026-11-27",
+  "pct": 6.92,
+  "pushed": false
+ },
+ "BTDR|heads_up|2026-11-24": {
+  "catalyst": "BTDR Nov 2026 6.500 put (BTDR261127P00006500) stock historical prices and data - Yahoo Finance Australia",
+  "date": "2026-11-24",
+  "pct": 14.72,
+  "pushed": true
+ },
+ "CCCC|heads_up|2026-11-24": {
+  "catalyst": "C4 Therapeutics (CCCC) Stock Is Soaring 17.2% Today Without Company News",
+  "date": "2026-11-24",
+  "pct": 15.67,
+  "pushed": true
+ },
+ "CCCC|watch|2026-11-27": {
+  "catalyst": null,
+  "date": "2026-11-27",
+  "pct": 8.59,
+  "pushed": false
+ },
+ "CLSK|heads_up|2026-11-24": {
+  "catalyst": "CLSK Nov 2026 9.500 call (CLSK261127C00009500) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+  "date": "2026-11-24",
+  "pct": 13.09,
+  "pushed": true
+ },
+ "ENVX|heads_up|2026-11-27": {
+  "catalyst": null,
+  "date": "2026-11-27",
+  "pct": 13.54,
+  "pushed": true
+ },
+ "FLNC|heads_up|2026-11-25": {
+  "catalyst": "Fluence Energy (FLNC) Stock Is Up 17.5% Today: Q4 Results, RBC Target Raise",
+  "date": "2026-11-25",
+  "pct": 15.12,
+  "pushed": true
+ },
+ "FLNC|heads_up|2026-11-26": {
+  "catalyst": "Fluence Energy (FLNC) Stock Fair Value Moves Lower After Analyst Cuts On Execution Risk",
+  "date": "2026-11-26",
+  "pct": 15.12,
+  "pushed": true
+ },
+ "HRTX|heads_up|2026-11-24": {
+  "catalyst": null,
+  "date": "2026-11-24",
+  "pct": 12.4,
+  "pushed": true
+ },
+ "IPSC|heads_up|2026-11-24": {
+  "catalyst": null,
+  "date": "2026-11-24",
+  "pct": 13.3,
+  "pushed": true
+ },
+ "KSS|heads_up|2026-11-24": {
+  "catalyst": "Kohl's stock soars after retailer posts sales growth for first time in 4 years",
+  "date": "2026-11-24",
+  "pct": 19.48,
+  "pushed": true
+ },
+ "LUNR|heads_up|2026-11-24": {
+  "catalyst": "NASA Is Handing Out Moon Contracts Again. Intuitive Machines, Firefly, and Redwire All Got Paid. Only 1 Has the Balance Sheet to Keep Winnin",
+  "date": "2026-11-24",
+  "pct": 11.11,
+  "pushed": true
+ },
+ "SERV|heads_up|2026-11-24": {
+  "catalyst": "AST SpaceMobile Stock Gets FCC Approval for Direct to Device Service - Yahoo Finance",
+  "date": "2026-11-24",
+  "pct": 10.78,
+  "pushed": true
+ },
+ "SOC|heads_up|2026-11-27": {
+  "catalyst": null,
+  "date": "2026-11-27",
+  "pct": 14.58,
+  "pushed": true
+ },
+ "SOUN|heads_up|2026-11-24": {
+  "catalyst": "SoundHound AI, Inc. (SOUN) stock price, news, quote and history - Yahoo Finance Australia",
+  "date": "2026-11-24",
+  "pct": 10.92,
+  "pushed": true
+ },
+ "TE|heads_up|2026-11-27": {
+  "catalyst": "T1 Energy: Strong Demand Meets Funding And Tax Credit Risks (NYSE:TE) - Seeking Alpha",
+  "date": "2026-11-27",
+  "pct": 13.18,
+  "pushed": true
+ },
+ "WULF|heads_up|2026-11-24": {
+  "catalyst": "New Analyst Forecast: $WULF Given $19 Price Target - Quiver Quantitative",
+  "date": "2026-11-24",
+  "pct": 10.76,
+  "pushed": true
+ }
+}
